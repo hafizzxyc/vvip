@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/index.js", "use": "@vercel/node" },
+    { "src": "api/pairing.js", "use": "@vercel/node" },
+    { "src": "api/status.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/pairing", "dest": "api/pairing.js" },
+    { "src": "/api/status", "dest": "api/status.js" },
+    { "src": "/(.*)", "dest": "api/index.js" }
+  ]
+}
